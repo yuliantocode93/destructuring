@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // {
+        //     // MENGAMBIL DATA DI ARRAY
+        //     const name = ['s', 'c', 'd', 'f',];
+        //     const [satu, dua, ...lainnya] = name;
+
+
+        //     console.info(satu);
+        //     console.info(dua);
+        //     console.info(lainnya);
+        // }
+
+        {
+            // DESTRUCTURING
+            const person = {
+                first: "echo1",
+                second: "echo2",
+                address: {
+                    jln: "jalan dipasena",
+                    kota: "lampung",
+                    negara: "indonesia"
+                },
+                hobby: "game",
+                channel: "makan"
+            };
+            // DESTRUCTURING NESTED OBJECT
+            let { first, second, address: { jln, kota }, ...others } = person;
+            console.info(first);
+            console.info(second);
+            console.info(jln);
+            console.info(kota);
+            console.info(others);
+        }
+
+
+        // DESTRUCTURING DI FUNCTION PARAMETER
+        {
+            function person({ first, middle, last }) {
+                console.info(first);
+                console.info(middle);
+                console.info(last);
+            }
+
+            const orang = {
+                first: "saya",
+                middle: "mau",
+                last: "makan"
+            }
+            person(orang);
+        }
+
+        {
+            function sum([first, second]) {
+                return first + second;
+            }
+
+            console.info(sum([1, 1]));
+            console.info(sum([10, 10]));
+        }
+
+        {
+            // DEFAULT VALUE DESTRUCTURING OBJECT
+            const person = {
+                first: "echo1",
+                second: "echo2"
+            };
+
+            const { first, third = "echo3", second } = person;
+            console.info(first);
+            console.info(second);
+            console.info(third);
+
+        }
+
+        {
+            // DESTRUCTURING
+            const person = {
+                first: "echo1",
+            };
+            let {
+                first: pertama,
+                second: kedua = "dua"
+            } = person;
+            console.info(pertama);//echo1
+            console.info(kedua);//dua
+        }
+
+
+    </script>
+</body>
+
+</html>
